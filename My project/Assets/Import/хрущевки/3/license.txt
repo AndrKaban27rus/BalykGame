@@ -1,0 +1,11 @@
+Model Information:
+* title:	soviet house
+* source:	https://sketchfab.com/3d-models/soviet-house-d258e48dee8d4f2daccb2b58d502a917
+* author:	EREMA_GEP (https://sketchfab.com/EREMA_GEP)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "soviet house" (https://sketchfab.com/3d-models/soviet-house-d258e48dee8d4f2daccb2b58d502a917) by EREMA_GEP (https://sketchfab.com/EREMA_GEP) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

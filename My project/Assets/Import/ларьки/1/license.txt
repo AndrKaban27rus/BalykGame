@@ -1,0 +1,11 @@
+Model Information:
+* title:	Roadside building
+* source:	https://sketchfab.com/3d-models/roadside-building-d0ad0ca168804bee9f44b66038e0ce57
+* author:	bean(alwayshasbean) (https://sketchfab.com/alwayshasbean)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Roadside building" (https://sketchfab.com/3d-models/roadside-building-d0ad0ca168804bee9f44b66038e0ce57) by bean(alwayshasbean) (https://sketchfab.com/alwayshasbean) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

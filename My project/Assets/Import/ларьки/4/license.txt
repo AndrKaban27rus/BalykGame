@@ -1,0 +1,11 @@
+Model Information:
+* title:	Russian market
+* source:	https://sketchfab.com/3d-models/russian-market-6436f37dbeb84ba8b59de02a09453a52
+* author:	VordisSccModels (https://sketchfab.com/RussianModels)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Russian market" (https://sketchfab.com/3d-models/russian-market-6436f37dbeb84ba8b59de02a09453a52) by VordisSccModels (https://sketchfab.com/RussianModels) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

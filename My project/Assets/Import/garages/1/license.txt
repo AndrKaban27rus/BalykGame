@@ -1,0 +1,11 @@
+Model Information:
+* title:	Double rusty russian garage
+* source:	https://sketchfab.com/3d-models/double-rusty-russian-garage-d062c8bd476c4fb6b92a78ceb2509291
+* author:	randombug (https://sketchfab.com/randombug)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Double rusty russian garage" (https://sketchfab.com/3d-models/double-rusty-russian-garage-d062c8bd476c4fb6b92a78ceb2509291) by randombug (https://sketchfab.com/randombug) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	House
+* source:	https://sketchfab.com/3d-models/house-342bac78e4ab410b9cf8e58ece4eaeae
+* author:	Sergey Korotkikh (https://sketchfab.com/expect_something)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "House" (https://sketchfab.com/3d-models/house-342bac78e4ab410b9cf8e58ece4eaeae) by Sergey Korotkikh (https://sketchfab.com/expect_something) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

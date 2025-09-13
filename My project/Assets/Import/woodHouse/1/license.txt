@@ -1,0 +1,11 @@
+Model Information:
+* title:	Old russian house
+* source:	https://sketchfab.com/3d-models/old-russian-house-857186ff54fd45ae85618c02ddd762c0
+* author:	akiprensky (https://sketchfab.com/akiprensky)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Old russian house" (https://sketchfab.com/3d-models/old-russian-house-857186ff54fd45ae85618c02ddd762c0) by akiprensky (https://sketchfab.com/akiprensky) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

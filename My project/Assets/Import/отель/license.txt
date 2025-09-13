@@ -1,0 +1,11 @@
+Model Information:
+* title:	Rossiya Hotel
+* source:	https://sketchfab.com/3d-models/rossiya-hotel-4e806b7b2dad417caf7e773eee041d14
+* author:	CrazyPolski103 (https://sketchfab.com/goofy_ah_pole)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Rossiya Hotel" (https://sketchfab.com/3d-models/rossiya-hotel-4e806b7b2dad417caf7e773eee041d14) by CrazyPolski103 (https://sketchfab.com/goofy_ah_pole) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

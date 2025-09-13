@@ -1,0 +1,11 @@
+Model Information:
+* title:	Panel house
+* source:	https://sketchfab.com/3d-models/panel-house-9b3e9748b76b4c8ab0bb98d9ea0739aa
+* author:	4telekanal (https://sketchfab.com/4telekanal)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Panel house" (https://sketchfab.com/3d-models/panel-house-9b3e9748b76b4c8ab0bb98d9ea0739aa) by 4telekanal (https://sketchfab.com/4telekanal) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

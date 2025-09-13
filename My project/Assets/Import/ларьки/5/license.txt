@@ -1,0 +1,11 @@
+Model Information:
+* title:	Мастерская Петровича из 5 ночей с Тимохой
+* source:	https://sketchfab.com/3d-models/5-f0f0dc82a561429396c3c871b19252d3
+* author:	Team GZ (https://sketchfab.com/Team_GZ_2025)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Мастерская Петровича из 5 ночей с Тимохой" (https://sketchfab.com/3d-models/5-f0f0dc82a561429396c3c871b19252d3) by Team GZ (https://sketchfab.com/Team_GZ_2025) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

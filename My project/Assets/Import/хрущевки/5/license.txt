@@ -1,0 +1,11 @@
+Model Information:
+* title:	Soviet Panel House
+* source:	https://sketchfab.com/3d-models/soviet-panel-house-75dc0bb868f64b9f920d3b85f307886c
+* author:	mrsanya333 (https://sketchfab.com/mrsanya333)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Soviet Panel House" (https://sketchfab.com/3d-models/soviet-panel-house-75dc0bb868f64b9f920d3b85f307886c) by mrsanya333 (https://sketchfab.com/mrsanya333) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

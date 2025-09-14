@@ -1,0 +1,11 @@
+Model Information:
+* title:	Российский Поребрик / Бордюр
+* source:	https://sketchfab.com/3d-models/0be44951daed47b5bc79bcbb761c9d40
+* author:	Log4n (https://sketchfab.com/13log4n37)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Российский Поребрик / Бордюр" (https://sketchfab.com/3d-models/0be44951daed47b5bc79bcbb761c9d40) by Log4n (https://sketchfab.com/13log4n37) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

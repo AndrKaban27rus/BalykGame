@@ -1,0 +1,11 @@
+Model Information:
+* title:	Ice Cream Stall
+* source:	https://sketchfab.com/3d-models/ice-cream-stall-d3e4bd535bbc47deb7f00c12768780c8
+* author:	Ivan-Kanaev (https://sketchfab.com/Ivan-Kanaev)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Ice Cream Stall" (https://sketchfab.com/3d-models/ice-cream-stall-d3e4bd535bbc47deb7f00c12768780c8) by Ivan-Kanaev (https://sketchfab.com/Ivan-Kanaev) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

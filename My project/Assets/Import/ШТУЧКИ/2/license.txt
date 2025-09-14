@@ -1,0 +1,11 @@
+Model Information:
+* title:	LAZ-699 Soviet Bus
+* source:	https://sketchfab.com/3d-models/laz-699-soviet-bus-5ce9ec9d67fd4160b0dcf1edf5c15452
+* author:	spacelynxcanfly (https://sketchfab.com/spacelynxcanfly)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "LAZ-699 Soviet Bus" (https://sketchfab.com/3d-models/laz-699-soviet-bus-5ce9ec9d67fd4160b0dcf1edf5c15452) by spacelynxcanfly (https://sketchfab.com/spacelynxcanfly) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

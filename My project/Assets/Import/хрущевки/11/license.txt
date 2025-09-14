@@ -1,0 +1,11 @@
+Model Information:
+* title:	Residential building (Moscow)
+* source:	https://sketchfab.com/3d-models/residential-building-moscow-5653cbfa4c324667ba595d847e456b8d
+* author:	Aleksandr Shevchenko (https://sketchfab.com/furious93rus)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Residential building (Moscow)" (https://sketchfab.com/3d-models/residential-building-moscow-5653cbfa4c324667ba595d847e456b8d) by Aleksandr Shevchenko (https://sketchfab.com/furious93rus) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,8 @@
+Model Information:
+* title:	Skyscrapers pack
+* source:	https://sketchfab.com/3d-models/skyscrapers-pack-06b793fc615745a5843a68ee7ce7d9ef
+* author:	assetfactory (https://sketchfab.com/assetfactory)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

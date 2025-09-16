@@ -1,0 +1,11 @@
+Model Information:
+* title:	Аптека общества врачей Енисейской губернии
+* source:	https://sketchfab.com/3d-models/7902516ae57c46ccbd82b1cb9852a083
+* author:	BlackSurv (https://sketchfab.com/BlackSurv)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Аптека общества врачей Енисейской губернии" (https://sketchfab.com/3d-models/7902516ae57c46ccbd82b1cb9852a083) by BlackSurv (https://sketchfab.com/BlackSurv) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

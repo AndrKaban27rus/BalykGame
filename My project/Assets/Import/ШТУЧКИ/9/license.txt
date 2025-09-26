@@ -1,0 +1,11 @@
+Model Information:
+* title:	Детская площадка
+* source:	https://sketchfab.com/3d-models/883fdf03e9f646f69f725f6e275a9618
+* author:	kolomna3dacad (https://sketchfab.com/kolomna3dacad)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Детская площадка" (https://sketchfab.com/3d-models/883fdf03e9f646f69f725f6e275a9618) by kolomna3dacad (https://sketchfab.com/kolomna3dacad) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Soviet Medium Tank T-34-85 (S-53)
+* source:	https://sketchfab.com/3d-models/soviet-medium-tank-t-34-85-s-53-a10398a0ed88401f9ce97e8b3ad2e967
+* author:	3D ARMOR (https://sketchfab.com/3D_Armor)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Soviet Medium Tank T-34-85 (S-53)" (https://sketchfab.com/3d-models/soviet-medium-tank-t-34-85-s-53-a10398a0ed88401f9ce97e8b3ad2e967) by 3D ARMOR (https://sketchfab.com/3D_Armor) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

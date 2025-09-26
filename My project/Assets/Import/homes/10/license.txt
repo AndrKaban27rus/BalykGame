@@ -1,0 +1,11 @@
+Model Information:
+* title:	InterContinental Warsaw
+* source:	https://sketchfab.com/3d-models/intercontinental-warsaw-7b9e7dd753444832b301e0d20a66223c
+* author:	Dawid (https://sketchfab.com/dawid.dubanosow)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "InterContinental Warsaw" (https://sketchfab.com/3d-models/intercontinental-warsaw-7b9e7dd753444832b301e0d20a66223c) by Dawid (https://sketchfab.com/dawid.dubanosow) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)

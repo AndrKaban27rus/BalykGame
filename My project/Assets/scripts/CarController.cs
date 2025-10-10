@@ -28,13 +28,21 @@ public class CarController : MonoBehaviour
     [Header("Car Settings")]
     public float maxMotorTorque = 800f;
     public float maxSteeringAngle = 25f;
-    public float maxBrakeTorque = 1000f;
+    public float maxBrakeTorque = 2000f;
     public float maxSpeed = 50f;
+    public float maxReverseSpeed = 20f;
+
+    [Header("Debug - Input Values")]
+    [SerializeField] private float debugThrottle = 0f;
+    [SerializeField] private float debugBrake = 0f;
+    [SerializeField] private float debugSteering = 0f;
+    [SerializeField] private bool debugIsReverse = false;
 
     private float currentThrottle;
     private float currentBrake;
     private float currentSteering;
     private Rigidbody carRigidbody;
+    private bool isReverse = false;
 
     // Для эффектов капсулы
     private Vector3 lastVelocity;
@@ -49,7 +57,6 @@ public class CarController : MonoBehaviour
 
     void InitializeCar()
     {
-        // Получаем Rigidbody
         carRigidbody = GetComponent<Rigidbody>();
         if (carRigidbody == null)
         {
@@ -57,15 +64,10 @@ public class CarController : MonoBehaviour
         }
         SetupRigidbody();
 
-     
-
-        // Настройка WheelColliders
+        AutoPositionWheels();
         SetupWheelControls();
-
-        // Отключаем проблемные коллайдеры
         DisableProblematicColliders();
 
-        // Поиск контроллеров
         if (inputController == null)
             inputController = FindObjectOfType<InputControllerReader>();
 
@@ -74,180 +76,23 @@ public class CarController : MonoBehaviour
 
         lastVelocity = carRigidbody.linearVelocity;
         lastForwardSpeed = GetForwardVelocity();
+
+        Debug.Log("Car initialized. Press Shift4 for reverse gear.");
     }
 
-    void AutoPositionWheels()
+    void Update()
     {
-        // Если колеса не назначены вручную, ищем их автоматически
-        if (frontLeftWheel == null || frontRightWheel == null ||
-            rearLeftWheel == null || rearRightWheel == null)
+        // Простая проверка передачи - если Shift4 активен, то задний ход
+        if (inputController != null)
         {
-            FindAndPositionAllWheels();
-        }
-        else
-        {
-            // Если колеса назначены, просто позиционируем их
-            PositionSingleWheel(frontLeftWheel, frontLeftPosition);
-            PositionSingleWheel(frontRightWheel, frontRightPosition);
-            PositionSingleWheel(rearLeftWheel, rearLeftPosition);
-            PositionSingleWheel(rearRightWheel, rearRightPosition);
-        }
-    }
-
-    void FindAndPositionAllWheels()
-    {
-        WheelControl[] allWheels = GetComponentsInChildren<WheelControl>();
-
-        if (allWheels.Length == 0)
-        {
-            Debug.LogError("No WheelControl components found! Please add wheels as children of the car.");
-            return;
+            isReverse = inputController.GetShift4();
         }
 
-        // Сортируем колеса по имени и позиционируем
-        foreach (WheelControl wheel in allWheels)
+        // Fallback для клавиатуры - R для заднего хода
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            string wheelName = wheel.name.ToLower();
-
-            if (wheelName.Contains("front"))
-            {
-                if (wheelName.Contains("left"))
-                {
-                    frontLeftWheel = wheel;
-                    PositionSingleWheel(wheel, frontLeftPosition);
-                }
-                else if (wheelName.Contains("right"))
-                {
-                    frontRightWheel = wheel;
-                    PositionSingleWheel(wheel, frontRightPosition);
-                }
-            }
-            else if (wheelName.Contains("rear") || wheelName.Contains("back"))
-            {
-                if (wheelName.Contains("left"))
-                {
-                    rearLeftWheel = wheel;
-                    PositionSingleWheel(wheel, rearLeftPosition);
-                }
-                else if (wheelName.Contains("right"))
-                {
-                    rearRightWheel = wheel;
-                    PositionSingleWheel(wheel, rearRightPosition);
-                }
-            }
-            else
-            {
-                // Если имя не распознано, назначаем автоматически
-                AutoAssignWheel(wheel, allWheels);
-            }
-        }
-
-        Debug.Log($"Positioned {allWheels.Length} wheels");
-    }
-
-    void AutoAssignWheel(WheelControl wheel, WheelControl[] allWheels)
-    {
-        // Автоматическое назначение на основе порядка в массиве
-        int wheelIndex = System.Array.IndexOf(allWheels, wheel);
-
-        switch (wheelIndex)
-        {
-            case 0:
-                frontLeftWheel = wheel;
-                PositionSingleWheel(wheel, frontLeftPosition);
-                break;
-            case 1:
-                frontRightWheel = wheel;
-                PositionSingleWheel(wheel, frontRightPosition);
-                break;
-            case 2:
-                rearLeftWheel = wheel;
-                PositionSingleWheel(wheel, rearLeftPosition);
-                break;
-            case 3:
-                rearRightWheel = wheel;
-                PositionSingleWheel(wheel, rearRightPosition);
-                break;
-            default:
-                // Для дополнительных колес
-                PositionSingleWheel(wheel, Vector3.zero);
-                break;
-        }
-    }
-
-    void PositionSingleWheel(WheelControl wheel, Vector3 localPosition)
-    {
-        if (wheel != null)
-        {
-            wheel.transform.localPosition = localPosition;
-            wheel.transform.localRotation = Quaternion.identity;
-
-            // Настраиваем WheelCollider если он есть
-            if (wheel.WheelCollider != null)
-            {
-                // Сбрасываем позицию WheelCollider
-                wheel.WheelCollider.transform.localPosition = Vector3.zero;
-            }
-
-            Debug.Log($"Positioned {wheel.name} at {localPosition}");
-        }
-    }
-
-    void SetupRigidbody()
-    {
-        carRigidbody.mass = 1200f;
-        carRigidbody.linearDamping = 0.05f;
-        carRigidbody.angularDamping = 2f;
-        carRigidbody.centerOfMass = new Vector3(0, -0.8f, 0);
-        carRigidbody.interpolation = RigidbodyInterpolation.Interpolate;
-        carRigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
-    }
-
-    void SetupWheelControls()
-    {
-        WheelControl[] allWheels = { frontLeftWheel, frontRightWheel, rearLeftWheel, rearRightWheel };
-
-        foreach (WheelControl wheelControl in allWheels)
-        {
-            if (wheelControl != null && wheelControl.WheelCollider != null)
-            {
-                SetupWheelCollider(wheelControl.WheelCollider);
-            }
-        }
-    }
-
-    void SetupWheelCollider(WheelCollider wheel)
-    {
-        JointSpring spring = wheel.suspensionSpring;
-        spring.spring = 35000f;
-        spring.damper = 3000f;
-        wheel.suspensionSpring = spring;
-        wheel.suspensionDistance = 0.15f;
-        wheel.forceAppPointDistance = 0f;
-
-        WheelFrictionCurve forwardFriction = wheel.forwardFriction;
-        forwardFriction.extremumSlip = 0.6f;
-        forwardFriction.extremumValue = 1.2f;
-        forwardFriction.asymptoteSlip = 1f;
-        forwardFriction.asymptoteValue = 0.8f;
-        wheel.forwardFriction = forwardFriction;
-
-        WheelFrictionCurve sidewaysFriction = wheel.sidewaysFriction;
-        sidewaysFriction.extremumSlip = 0.4f;
-        sidewaysFriction.extremumValue = 1.5f;
-        sidewaysFriction.asymptoteSlip = 0.8f;
-        sidewaysFriction.asymptoteValue = 1f;
-        wheel.sidewaysFriction = sidewaysFriction;
-
-        wheel.mass = 30f;
-    }
-
-    void DisableProblematicColliders()
-    {
-        MeshCollider meshCollider = GetComponent<MeshCollider>();
-        if (meshCollider != null)
-        {
-            meshCollider.enabled = false;
+            isReverse = !isReverse;
+            Debug.Log(isReverse ? "REVERSE gear engaged" : "DRIVE gear engaged");
         }
     }
 
@@ -259,9 +104,14 @@ public class CarController : MonoBehaviour
         UpdateCapsuleMotion();
         UpdateCarSteeringWheel();
         StabilizeCar();
+
+        // Обновляем debug значения
+        debugThrottle = currentThrottle;
+        debugBrake = currentBrake;
+        debugSteering = currentSteering;
+        debugIsReverse = isReverse;
     }
 
-    // Остальные методы остаются без изменений...
     void GetSmoothedInput()
     {
         if (inputController != null)
@@ -270,25 +120,73 @@ public class CarController : MonoBehaviour
             currentBrake = inputController.GetSmoothedBrake();
             currentSteering = inputController.GetSmoothedSteering();
         }
+        else
+        {
+            // Fallback для клавиатуры
+            currentThrottle = Mathf.Clamp01(Input.GetAxis("Vertical"));
+            currentBrake = Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.Space) ? 1f : 0f;
+            currentSteering = Input.GetAxis("Horizontal");
+        }
     }
 
     void ApplyWheelPhysics()
     {
         float currentSpeed = GetCurrentSpeed();
-        float speedFactor = Mathf.Clamp01(1 - (currentSpeed / maxSpeed));
+        float forwardVelocity = GetForwardVelocity();
 
+        // РУЛЕВОЕ УПРАВЛЕНИЕ
         float steeringAngle = currentSteering * maxSteeringAngle;
 
         if (frontLeftWheel != null && frontLeftWheel.steerable)
             frontLeftWheel.WheelCollider.steerAngle = steeringAngle;
+
         if (frontRightWheel != null && frontRightWheel.steerable)
             frontRightWheel.WheelCollider.steerAngle = steeringAngle;
 
-        float motorTorque = currentThrottle * maxMotorTorque * speedFactor;
-        ApplyMotorTorqueToAllWheels(motorTorque);
+        // МОТОРНЫЙ КРУТЯЩИЙ МОМЕНТ
+        float motorTorque = 0f;
 
-        float brakeTorque = currentBrake * maxBrakeTorque;
+        if (currentThrottle > 0 && currentBrake == 0)
+        {
+            if (isReverse)
+            {
+                // ЗАДНИЙ ХОД - отрицательный момент
+                float reverseSpeed = Mathf.Abs(Mathf.Min(forwardVelocity, 0));
+                float speedFactor = Mathf.Clamp01(1 - (reverseSpeed / maxReverseSpeed));
+                motorTorque = -currentThrottle * maxMotorTorque * 0.8f * speedFactor;
+            }
+            else
+            {
+                // ПЕРЕДНИЙ ХОД - положительный момент
+                float speedFactor = Mathf.Clamp01(1 - (currentSpeed / maxSpeed));
+                motorTorque = currentThrottle * maxMotorTorque * speedFactor;
+            }
+        }
+
+        // ТОРМОЖЕНИЕ
+        float brakeTorque = 0f;
+
+        if (currentBrake > 0)
+        {
+            // Активное торможение
+            brakeTorque = currentBrake * maxBrakeTorque;
+        }
+        else if (currentThrottle == 0 && currentSpeed > 5f)
+        {
+            // Торможение двигателем
+            brakeTorque = maxBrakeTorque * 0.3f;
+        }
+
+        // Применяем вычисленные значения
+        ApplyMotorTorqueToAllWheels(motorTorque);
         ApplyBrakeToAllWheels(brakeTorque);
+
+        // Debug информация
+        if (motorTorque != 0)
+        {
+            string direction = isReverse ? "REVERSE" : "FORWARD";
+            Debug.Log($"{direction} - Throttle: {currentThrottle}, Motor: {motorTorque:F0}, Speed: {currentSpeed:F1}");
+        }
     }
 
     void ApplyMotorTorqueToAllWheels(float motorTorque)
@@ -374,19 +272,144 @@ public class CarController : MonoBehaviour
         }
     }
 
-    [ContextMenu("Reposition All Wheels")]
-    public void RepositionAllWheels()
+    void SetupRigidbody()
     {
-        PositionSingleWheel(frontLeftWheel, frontLeftPosition);
-        PositionSingleWheel(frontRightWheel, frontRightPosition);
-        PositionSingleWheel(rearLeftWheel, rearLeftPosition);
-        PositionSingleWheel(rearRightWheel, rearRightPosition);
-        Debug.Log("All wheels repositioned!");
+        carRigidbody.mass = 1200f;
+        carRigidbody.linearDamping = 0.05f;
+        carRigidbody.angularDamping = 2f;
+        carRigidbody.centerOfMass = new Vector3(0, -0.8f, 0);
+        carRigidbody.interpolation = RigidbodyInterpolation.Interpolate;
+        carRigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
     }
 
-    [ContextMenu("Find Missing Wheels")]
-    public void FindMissingWheels()
+    void AutoPositionWheels()
     {
-        AutoPositionWheels();
+        if (frontLeftWheel == null || frontRightWheel == null ||
+            rearLeftWheel == null || rearRightWheel == null)
+        {
+            FindAndPositionAllWheels();
+        }
+        else
+        {
+            PositionSingleWheel(frontLeftWheel, frontLeftPosition);
+            PositionSingleWheel(frontRightWheel, frontRightPosition);
+            PositionSingleWheel(rearLeftWheel, rearLeftPosition);
+            PositionSingleWheel(rearRightWheel, rearRightPosition);
+        }
+    }
+
+    void FindAndPositionAllWheels()
+    {
+        WheelControl[] allWheels = GetComponentsInChildren<WheelControl>();
+
+        foreach (WheelControl wheel in allWheels)
+        {
+            string wheelName = wheel.name.ToLower();
+
+            if (wheelName.Contains("front"))
+            {
+                if (wheelName.Contains("left"))
+                {
+                    frontLeftWheel = wheel;
+                    PositionSingleWheel(wheel, frontLeftPosition);
+                }
+                else if (wheelName.Contains("right"))
+                {
+                    frontRightWheel = wheel;
+                    PositionSingleWheel(wheel, frontRightPosition);
+                }
+            }
+            else if (wheelName.Contains("rear") || wheelName.Contains("back"))
+            {
+                if (wheelName.Contains("left"))
+                {
+                    rearLeftWheel = wheel;
+                    PositionSingleWheel(wheel, rearLeftPosition);
+                }
+                else if (wheelName.Contains("right"))
+                {
+                    rearRightWheel = wheel;
+                    PositionSingleWheel(wheel, rearRightPosition);
+                }
+            }
+        }
+    }
+
+    void PositionSingleWheel(WheelControl wheel, Vector3 localPosition)
+    {
+        if (wheel != null)
+        {
+            wheel.transform.localPosition = localPosition;
+            wheel.transform.localRotation = Quaternion.identity;
+        }
+    }
+
+    void SetupWheelControls()
+    {
+        WheelControl[] allWheels = { frontLeftWheel, frontRightWheel, rearLeftWheel, rearRightWheel };
+
+        foreach (WheelControl wheelControl in allWheels)
+        {
+            if (wheelControl != null && wheelControl.WheelCollider != null)
+            {
+                SetupWheelCollider(wheelControl.WheelCollider);
+            }
+        }
+    }
+
+    void SetupWheelCollider(WheelCollider wheel)
+    {
+        JointSpring spring = wheel.suspensionSpring;
+        spring.spring = 35000f;
+        spring.damper = 3000f;
+        wheel.suspensionSpring = spring;
+        wheel.suspensionDistance = 0.15f;
+        wheel.forceAppPointDistance = 0f;
+
+        WheelFrictionCurve forwardFriction = wheel.forwardFriction;
+        forwardFriction.extremumSlip = 0.6f;
+        forwardFriction.extremumValue = 1.2f;
+        forwardFriction.asymptoteSlip = 1f;
+        forwardFriction.asymptoteValue = 0.8f;
+        wheel.forwardFriction = forwardFriction;
+
+        WheelFrictionCurve sidewaysFriction = wheel.sidewaysFriction;
+        sidewaysFriction.extremumSlip = 0.4f;
+        sidewaysFriction.extremumValue = 1.5f;
+        sidewaysFriction.asymptoteSlip = 0.8f;
+        sidewaysFriction.asymptoteValue = 1f;
+        wheel.sidewaysFriction = sidewaysFriction;
+
+        wheel.mass = 30f;
+    }
+
+    void DisableProblematicColliders()
+    {
+        MeshCollider meshCollider = GetComponent<MeshCollider>();
+        if (meshCollider != null)
+        {
+            meshCollider.enabled = false;
+        }
+    }
+
+    [ContextMenu("Toggle Reverse Gear")]
+    public void ToggleReverseGear()
+    {
+        isReverse = !isReverse;
+        Debug.Log(isReverse ? "REVERSE gear engaged" : "DRIVE gear engaged");
+    }
+
+    [ContextMenu("Set Drive Gear")]
+    public void SetDriveGear()
+    {
+        isReverse = false;
+        Debug.Log("DRIVE gear engaged");
+    }
+
+    [ContextMenu("Set Reverse Gear")]
+    public void SetReverseGear()
+    {
+        isReverse = true;
+        Debug.Log("REVERSE gear engaged");
     }
 }

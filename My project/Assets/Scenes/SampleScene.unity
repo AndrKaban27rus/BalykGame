@@ -16751,7 +16751,7 @@ MonoBehaviour:
   wheelModel: {fileID: 1689200155}
   WheelCollider: {fileID: 0}
   steerable: 1
-  motorized: 1
+  motorized: 0
 --- !u!1 &839734301
 GameObject:
   m_ObjectHideFlags: 0
@@ -20396,6 +20396,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Imported
       objectReference: {fileID: 0}
+    - target: {fileID: 3566771085600117231, guid: 04a5eaaeed9c8d444ac6b07015528254, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.36924705
+      objectReference: {fileID: 0}
+    - target: {fileID: 3566771085600117231, guid: 04a5eaaeed9c8d444ac6b07015528254, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.42886755
+      objectReference: {fileID: 0}
+    - target: {fileID: 3566771085600117231, guid: 04a5eaaeed9c8d444ac6b07015528254, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.62473255
+      objectReference: {fileID: 0}
+    - target: {fileID: 3566771085600117231, guid: 04a5eaaeed9c8d444ac6b07015528254, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5379949
+      objectReference: {fileID: 0}
+    - target: {fileID: 3566771085600117231, guid: 04a5eaaeed9c8d444ac6b07015528254, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -98.536
+      objectReference: {fileID: 0}
+    - target: {fileID: 3566771085600117231, guid: 04a5eaaeed9c8d444ac6b07015528254, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0.036987305
+      objectReference: {fileID: 0}
+    - target: {fileID: 3566771085600117231, guid: 04a5eaaeed9c8d444ac6b07015528254, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -111.03
+      objectReference: {fileID: 0}
     - target: {fileID: 6525997293756599515, guid: 04a5eaaeed9c8d444ac6b07015528254, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0
@@ -20419,6 +20447,10 @@ PrefabInstance:
     - target: {fileID: 6525997293756599515, guid: 04a5eaaeed9c8d444ac6b07015528254, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539551062303058739, guid: 04a5eaaeed9c8d444ac6b07015528254, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20534,9 +20566,12 @@ MonoBehaviour:
   carSteeringWheel: {fileID: 1288014231}
   maxSteeringWheelAngle: 360
   maxMotorTorque: 8000
-  maxSteeringAngle: 70
+  maxSteeringAngle: 30
   maxBrakeTorque: 1000
   maxSpeed: 200
+  debugThrottle: 0
+  debugBrake: 0
+  debugSteering: 0
 --- !u!114 &992882290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27609,7 +27644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 1882621920}
   WheelCollider: {fileID: 0}
-  steerable: 1
+  steerable: 0
   motorized: 1
 --- !u!1 &1349702858
 GameObject:
@@ -32985,7 +33020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheelModel: {fileID: 121756792}
   WheelCollider: {fileID: 0}
-  steerable: 1
+  steerable: 0
   motorized: 1
 --- !u!1 &1623574854
 GameObject:
@@ -41445,7 +41480,7 @@ MonoBehaviour:
   wheelModel: {fileID: 1868286954}
   WheelCollider: {fileID: 0}
   steerable: 1
-  motorized: 1
+  motorized: 0
 --- !u!43 &2137861163
 Mesh:
   m_ObjectHideFlags: 0

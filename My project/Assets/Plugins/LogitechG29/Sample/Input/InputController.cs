@@ -1948,6 +1948,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
     /// </summary>
     /// <seealso cref="HandbrakeActions.AddCallbacks(IHandbrakeActions)" />
     /// <seealso cref="HandbrakeActions.RemoveCallbacks(IHandbrakeActions)" />
+    
     public interface IHandbrakeActions
     {
         /// <summary>

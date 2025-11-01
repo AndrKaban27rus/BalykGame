@@ -425,6 +425,39 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "1D Axis",
+                    "id": "759c1c56-748e-487f-8f40-687649053403",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steering_Steering",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "b56fd027-da1e-4e0a-a816-920bf816ce06",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steering_Steering",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "7b595249-9cd9-416c-9fa3-44df291888c9",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Logitech G29",
+                    "action": "Steering_Steering",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "a8fcf12e-ef1c-4c67-a48f-4aecbc425dd8",
                     "path": "<Logitech G29 Racing Wheel>/stick/x",
@@ -483,6 +516,17 @@
                 },
                 {
                     "name": "",
+                    "id": "69e8b95e-18c0-4127-a62f-c8ee3a18b35f",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throttle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "23c462a6-d9b2-4140-ae65-03d64daa6a0d",
                     "path": "<Logitech G29 Racing Wheel>/clutchAxis",
                     "interactions": "",
@@ -499,6 +543,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Logitech G29",
+                    "action": "Brake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c9b0ba1e-8579-4ff0-a750-5a3a66518d7d",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Brake",
                     "isComposite": false,
                     "isPartOfComposite": false

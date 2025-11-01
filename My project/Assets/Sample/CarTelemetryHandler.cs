@@ -68,6 +68,5 @@ public class CarTelemetryHandler : MonoBehaviour
         euler.y = euler.y > 180 ? euler.y - 360 : euler.y;
 
         _telemetryDataData.Angles = euler;
-        
     }
 }

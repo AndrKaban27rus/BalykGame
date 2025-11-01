@@ -78,19 +78,7 @@ public class AlternativeController : MonoBehaviour
 
             wasEastButtonPressed = isEastButtonPressed;
 
-            // Optional: Also allow keyboard control (R key for radio)
-            if (Keyboard.current.rKey.wasPressedThisFrame)
-            {
-                ToggleRadio();
-            }
-        }
-        else
-        {
-            // Fallback to keyboard only
-            if (Keyboard.current.rKey.wasPressedThisFrame)
-            {
-                ToggleRadio();
-            }
+          
         }
 
         // Check if current song finished and radio is on
@@ -190,13 +178,7 @@ public class AlternativeController : MonoBehaviour
     }
 
     // Public methods to control radio from other scripts
-    public void SetRadioVolume(float volume)
-    {
-        if (radioAudioSource != null)
-        {
-            radioAudioSource.volume = Mathf.Clamp01(volume);
-        }
-    }
+
 
     public bool IsRadioPlaying()
     {
@@ -253,30 +235,7 @@ public class AlternativeController : MonoBehaviour
 
     void CheckInput()
     {
-        // WASD input for keyboard control
-        float keyboardVertical = 0f;
-        float keyboardHorizontal = 0f;
-
-        // W/S for acceleration/brake
-        if (Keyboard.current.wKey.isPressed)
-        {
-            keyboardVertical = 1f;
-        }
-        else if (Keyboard.current.sKey.isPressed)
-        {
-            keyboardVertical = -1f;
-        }
-
-        // A/D for steering
-        if (Keyboard.current.aKey.isPressed)
-        {
-            keyboardHorizontal = -1f;
-        }
-        else if (Keyboard.current.dKey.isPressed)
-        {
-            keyboardHorizontal = 1f;
-        }
-
+    
         // Combine keyboard and Logitech G29 input (whichever has greater magnitude)
         if (_inputController != null)
         {
@@ -292,14 +251,8 @@ public class AlternativeController : MonoBehaviour
             float g29Steering = _inputController.Steering;
 
             // Prioritize input with greater magnitude, or keyboard if no G29 connected
-            verticalInput = Mathf.Abs(g29Vertical) > 0.1f ? g29Vertical : keyboardVertical;
-            horizontalInput = Mathf.Abs(g29Steering) > 0.1f ? g29Steering : keyboardHorizontal;
-        }
-        else
-        {
-            // Fallback to keyboard only
-            verticalInput = keyboardVertical;
-            horizontalInput = keyboardHorizontal;
+            verticalInput = g29Vertical;
+            horizontalInput =  g29Steering  ;
         }
 
         float movingDirection = Vector3.Dot(transform.forward, rb.linearVelocity);
@@ -308,11 +261,8 @@ public class AlternativeController : MonoBehaviour
 
     public void Break()
     {
-        // Additional brake input from Space key
-        float keyboardBrake = Keyboard.current.spaceKey.isPressed ? 1f : 0f;
 
-        // Combine automatic braking with manual brake input
-        float totalBrakeInput = Mathf.Max(breakInput, keyboardBrake);
+        float totalBrakeInput = breakInput;
 
         foreach (Wheel wheel in wheels)
         {
